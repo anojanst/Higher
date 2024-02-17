@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { courseApi } from "../api/course";
 import { WEBSITE_TITLE } from "../constant";
 import { getConfig } from "../getConfig";
+
 const config = getConfig();
 
 function Home() {
