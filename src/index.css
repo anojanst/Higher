@@ -1,3 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border list-none p-0 m-0 scroll-smooth;
+  }
+
+  body {
+    @apply text-black min-h-screen font-inter bg-white-500;
+  }
+}
+
+@layer utilities {
+  .navLink {
+    @apply text-base;
+  }
+}
+
+.discipline-grid {
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
