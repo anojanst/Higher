@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col gap-8 items-center justify-center h-[12rem] w-full bg-black">
+    <footer className="flex flex-col md:gap-8 gap-4 items-center justify-center h-[12rem] w-full bg-black">
       <div className="flex justify-center items-center gap-8">
         <Link to="/" className="text-white text-sm">
           Home

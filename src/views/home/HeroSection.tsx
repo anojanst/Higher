@@ -9,7 +9,7 @@ import Study5 from "../../assets/images/study-5.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="grid place-items-center min-h-screen w-full py-[1rem] relative">
+    <section className="grid place-items-center md:min-h-screen min-h-[80vh] w-full md:px-[5rem] px-7 py-[1rem] relative">
       <div className="flex items-center justify-start w-full max-w-[1400px] relative">
         <form className="flex flex-col justify-start items-start relative gap-3 md:w-1/2 sm:w-2/3 w-full z-10">
           <h1 className="text-black xl:text-5xl md:text-4xl text-3xl font-bold">
