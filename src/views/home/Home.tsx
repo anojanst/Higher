@@ -5,6 +5,7 @@ import { getConfig } from "../../getConfig";
 import HeroSection from "./HeroSection";
 import Counts from "./Counts";
 import Discipline from "./Discipline";
+import RegisterForm from "./RegisterForm";
 
 const config = getConfig();
 
@@ -24,10 +25,11 @@ function Home() {
   }, [api]);
 
   return (
-    <section className="flex flex-col gap-8 mt-[-5rem] overflow-x-hidden">
+    <section className="flex flex-col gap-8 overflow-x-hidden">
       <HeroSection />
       <Counts />
       <Discipline />
+      <RegisterForm />
     </section>
   );
 }
