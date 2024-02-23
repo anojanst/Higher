@@ -6,6 +6,7 @@ import HeroSection from "./HeroSection";
 import Counts from "./Counts";
 import Discipline from "./Discipline";
 import RegisterForm from "./RegisterForm";
+import { Helmet } from "react-helmet";
 
 const config = getConfig();
 
@@ -25,12 +26,17 @@ function Home() {
   }, [api]);
 
   return (
-    <section className="flex flex-col gap-8 overflow-x-hidden">
-      <HeroSection />
-      <Counts />
-      <Discipline />
-      <RegisterForm />
-    </section>
+    <>
+      <Helmet>
+        <title>Higher</title>
+      </Helmet>
+      <section className="flex flex-col gap-8 overflow-x-hidden">
+        <HeroSection />
+        <Counts />
+        <Discipline />
+        <RegisterForm />
+      </section>
+    </>
   );
 }
 
