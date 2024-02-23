@@ -5,9 +5,12 @@ import YellowCircle from "../../assets/images/yellow-ellipse.png";
 
 const RegisterForm = () => {
   return (
-    <section className="w-full min-h-screen h-full md:px-[5rem] px-7 py-[5rem] grid place-items-center">
-      <div className="flex lg:flex-row flex-col-reverse w-full max-w-[1400px] h-full gap-[4rem] justify-center items-start relative">
-        <form className="flex flex-col justify-between 2xl:w-1/2 xl:w-2/5 w-full gap-8 h-full z-10">
+    <section
+      id="register-form"
+      className="w-full min-h-screen h-full md:px-[5rem] px-7 py-[5rem] grid place-items-center"
+    >
+      <div className="flex lg:flex-row flex-col-reverse w-full max-w-[1400px] h-full 2xl:max-h-[70vh] gap-[4rem] justify-center items-start relative">
+        <form className="flex flex-col justify-between 2xl:w-[30rem] xl:w-2/5 w-full gap-8 h-full z-10">
           <header className="flex flex-col justify-center items-center gap-1 text-center">
             <h1 className="text-4xl font-bold">Register Your Institute</h1>
             <p>Haven’t your Instititute is registered with us yet?</p>
@@ -21,7 +24,7 @@ const RegisterForm = () => {
         <img
           src={RegisterImg}
           alt="registerImg"
-          className="2xl:w-[25rem] xl:w-2/5 w-full h-full object-cover rounded-[2rem] rounded-br-[5rem] z-10"
+          className="2xl:w-[30rem] xl:w-2/5 w-full h-full object-cover rounded-[2rem] rounded-br-[5rem] z-10"
         />
 
         <img

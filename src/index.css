@@ -19,14 +19,18 @@
     @apply text-base;
   }
 
+  .mobile-link {
+    @apply py-2 grid place-items-center w-full rounded-lg text-base hover:bg-gray-500;
+  }
+
   .count-box {
     @apply flex flex-col items-baseline sm:justify-end justify-start pl-[1rem] pb-[10px] sm:pr-0 pr-2 md:pt-0 pt-2 2xl:w-1/5 xl:w-1/4 sm:w-[30%] w-full xl:h-[10rem] sm:h-[8rem] h-[6rem] border-l-4 sm:rounded-tr-[4rem] rounded-none border-secondary-500 bg-gray-300 xl:gap-6  md:gap-5 gap-0;
-    h1 {
-      @apply 2xl:text-[4rem] lg:text-[3.5rem] sm:text-[2.7rem] text-3xl font-bold;
-    }
-    p {
-      @apply lg:text-base text-sm;
-    }
+  }
+  .count-box h1 {
+    @apply 2xl:text-[4rem] lg:text-[3.5rem] sm:text-[2.7rem] text-3xl font-bold;
+  }
+  .count-box p {
+    @apply lg:text-base text-sm;
   }
 }
 

@@ -2,8 +2,17 @@ import { Link } from "react-router-dom";
 import { Button } from "../components";
 import HigherSVG from "../assets/svgs/higher.svg";
 import { FaBars } from "react-icons/fa";
+import { Link as LinkScroll } from "react-scroll";
 
-const Navbar = () => {
+interface NavbarProps {
+  isMobileNavOpen: boolean;
+  setIsMobileNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
+  isMobileNavOpen,
+  setIsMobileNavOpen,
+}) => {
   return (
     <nav className="sticky top-0 bg-white-500 flex w-full justify-center items-center h-20 md:px-[5rem] px-7 py-5 z-[99]">
       <div className="flex justify-between items-center w-full max-w-[1400px]">
@@ -15,7 +24,10 @@ const Navbar = () => {
           />
         </Link>
 
-        <div className="lg:hidden grid place-items-center text-[1.8rem] cursor-pointer">
+        <div
+          className="lg:hidden grid place-items-center text-[1.8rem] cursor-pointer"
+          onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+        >
           <FaBars />
         </div>
 
@@ -30,9 +42,15 @@ const Navbar = () => {
             Institutes
           </Link>
         </div>
-        <div className="lg:grid hidden place-items-center">
-          <Button text="Register Your Institute" />
-        </div>
+        <LinkScroll
+          to="register-form"
+          onClick={() => setIsMobileNavOpen(false)}
+          smooth={true}
+          duration={500}
+          className="lg:grid hidden place-items-center cursor-pointer"
+        >
+          <Button text="Register Your Institute" width="25rem" />
+        </LinkScroll>
       </div>
     </nav>
   );
