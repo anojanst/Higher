@@ -14,6 +14,7 @@ import Medicine from "./assets/images/caduceus-symbol_4637726 1.png";
 import NaturalSciences from "./assets/images/compass_4783253 1.png";
 import SocialSciences from "./assets/images/teamwork_5076117 1.png";
 import AllCourses from "./assets/images/bachelor_4783222 1.png";
+import InstituteLogo from "./assets/images/insituteLogo.png";
 
 export const WEBSITE_TITLE = "Higher";
 export const ERROR_404_MESSAGE = "Page not found.";
@@ -82,5 +83,48 @@ export const DisciplineData = [
     src: AllCourses,
     title: "View All Courses",
     isEnd: true,
+  },
+];
+
+export const SampleSearchResults = [
+  {
+    title: "MSc in Software Engineering",
+    description:
+      "We have Thousands of courses Listed in the site from all over the island for you to choose. Use our search engine to filter out the course your heart desire.",
+    discipline: "Computer Science & IT",
+    courseType: "Postgraduate Degree",
+    formatType: "Part Time",
+    institutionLogo: InstituteLogo,
+    institutionName: "Esoft Metro Campus",
+  },
+  {
+    title: "MSc in Software Engineering",
+    description:
+      "We have Thousands of courses Listed in the site from all over the island for you to choose. Use our search engine to filter out the course your heart desire.",
+    discipline: "Computer Science & IT",
+    courseType: "Postgraduate Degree",
+    formatType: "Part Time",
+    institutionLogo: InstituteLogo,
+    institutionName: "Esoft Metro Campus",
+  },
+  {
+    title: "MSc in Software Engineering",
+    description:
+      "We have Thousands of courses Listed in the site from all over the island for you to choose. Use our search engine to filter out the course your heart desire.",
+    discipline: "Computer Science & IT",
+    courseType: "Postgraduate Degree",
+    formatType: "Part Time",
+    institutionLogo: InstituteLogo,
+    institutionName: "Esoft Metro Campus",
+  },
+  {
+    title: "MSc in Software Engineering",
+    description:
+      "We have Thousands of courses Listed in the site from all over the island for you to choose. Use our search engine to filter out the course your heart desire.",
+    discipline: "Computer Science & IT",
+    courseType: "Postgraduate Degree",
+    formatType: "Part Time",
+    institutionLogo: InstituteLogo,
+    institutionName: "Esoft Metro Campus",
   },
 ];
