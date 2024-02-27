@@ -8,7 +8,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ text, width }) => {
   return (
     <button
-      className={`text-white w-[${width}] grid place-items-center bg-secondary-500 px-[1rem] py-[8px] rounded-lg`}
+      className={`text-white w-[${width}] flex-center bg-secondary-500 px-[1rem] py-[8px] rounded-lg`}
     >
       {text}
     </button>
