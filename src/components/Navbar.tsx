@@ -3,6 +3,7 @@ import { Button } from "../components";
 import HigherSVG from "../assets/svgs/higher.svg";
 import { FaBars } from "react-icons/fa";
 import { Link as LinkScroll } from "react-scroll";
+import { MAIN_MENU_HOME } from "../constants/generalConstants";
 
 interface NavbarProps {
   isMobileNavOpen: boolean;
@@ -33,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
         <div className="lg:flex hidden justify-center items-center gap-10">
           <Link to="/" className="navLink">
-            Home
+            {MAIN_MENU_HOME}
           </Link>
           <Link to="/find-courses" className="navLink">
             Find Your Courses

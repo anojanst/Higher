@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 import { Button } from ".";
 import { MdClose } from "react-icons/md";
+import { MAIN_MENU_HOME } from "../constants/generalConstants";
 
 interface MobileNavProps {
   isMobileNavOpen: boolean;
@@ -31,7 +32,7 @@ const MobileNav: React.FC<MobileNavProps> = ({
       </span>
       <div className="flex flex-col gap-8 w-[90%] max-w-[500px]">
         <Link to="/" className="mobile-link" onClick={handleMobileNav}>
-          Home
+          {MAIN_MENU_HOME}
         </Link>
         <Link
           to="/find-courses"
