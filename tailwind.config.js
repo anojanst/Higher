@@ -12,7 +12,7 @@ export default {
         "gray-500": "#ABABAB",
       },
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
+        avenir: ["Avenir", "sans-serif"],
       },
     },
   },
