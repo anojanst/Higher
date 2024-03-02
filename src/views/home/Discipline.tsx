@@ -1,4 +1,4 @@
-import { DisciplineData } from "../../constant";
+import { DisciplineData } from "../../constants/homeConstants";
 
 const Discipline = () => {
   return (
@@ -9,16 +9,16 @@ const Discipline = () => {
           {DisciplineData.map((item, index) => (
             <div
               key={index}
-              className={`w-full h-[10rem] rounded-[15px] flex flex-col justify-center items-center border-2 px-4 ${
-                item.isEnd ? "hover:bg-secondary-500" : "hover:bg-primary-600"
-              } cursor-pointer`}
+              className={`w-full h-[10rem] rounded-[15px] flex flex-col justify-center items-center border-2 px-4 cursor-pointer gap-3 ${
+                item.isEnd ? "bg-secondary-600" : "hover:bg-primary-600"
+              }`}
             >
               <img
                 src={item.src}
                 alt={`discipline_${index}`}
-                className="w-16 h-16 bg-none object-cover"
+                className="w-12 h-12 bg-none object-cover"
               />
-              <p className="text-base px-2 text-center">{item.title}</p>
+              <p className="text-sm px-2 text-center">{item.title}</p>
             </div>
           ))}
         </div>

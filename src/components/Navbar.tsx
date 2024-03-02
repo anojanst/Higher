@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 import { Button } from "../components";
-import HigherSVG from "../assets/svgs/higher.svg";
 import { FaBars } from "react-icons/fa";
 import { Link as LinkScroll } from "react-scroll";
-import { MAIN_MENU_HOME } from "../constants/generalConstants";
+import {
+  MAIN_MENU_FIND_COURSE,
+  MAIN_MENU_HOME,
+  MAIN_MENU_INSTITUTES,
+} from "../constants/generalConstants";
+import {
+  FIND_COURSE_URL,
+  HOME_URL,
+  INSTITUTES_URL,
+} from "../constants/urlConstants";
+import { HigherLogoSVG } from "../assets";
 
 interface NavbarProps {
   isMobileNavOpen: boolean;
@@ -15,11 +24,11 @@ const Navbar: React.FC<NavbarProps> = ({
   setIsMobileNavOpen,
 }) => {
   return (
-    <nav className="sticky top-0 bg-white-500 flex w-full justify-center items-center h-20 md:px-[5rem] px-7 py-5 z-[99]">
+    <nav className="sticky top-0 bg-white-500 flex w-full justify-center items-center h-20 md:px-[5rem] px-7 py-5 z-[99] shadow-lg">
       <div className="flex justify-between items-center w-full max-w-[1400px]">
-        <Link to="/">
+        <Link to={HOME_URL}>
           <img
-            src={HigherSVG}
+            src={HigherLogoSVG}
             alt="Higher SVG"
             className="w-36 h-auto object-cover"
           />
@@ -33,19 +42,18 @@ const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         <div className="lg:flex hidden justify-center items-center gap-10">
-          <Link to="/" className="navLink">
+          <Link to={HOME_URL} className="navLink">
             {MAIN_MENU_HOME}
           </Link>
-          <Link to="/find-courses" className="navLink">
-            Find Your Courses
+          <Link to={FIND_COURSE_URL} className="navLink">
+            {MAIN_MENU_FIND_COURSE}
           </Link>
-          <Link to="/institutes" className="navLink">
-            Institutes
+          <Link to={INSTITUTES_URL} className="navLink">
+            {MAIN_MENU_INSTITUTES}
           </Link>
         </div>
         <LinkScroll
           to="register-form"
-          onClick={() => setIsMobileNavOpen(false)}
           smooth={true}
           duration={500}
           className="lg:grid hidden place-items-center cursor-pointer"
