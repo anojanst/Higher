@@ -1,21 +1,16 @@
-import GraduationIcon from "../../assets/images/graduation-icon.png";
+import { GraduationIcon } from "../../assets";
+import { HOME_COUNTS_DATA } from "../../constants/homeConstants";
 
 const Counts = () => {
   return (
     <section className="w-full flex flex-col items-center justify-center gap-[2rem]">
       <div className="py-8 w-full flex items-center justify-center xl:gap-[5rem] sm:gap-[3rem] gap-4 md:px-[5rem] px-7">
-        <div className="count-box">
-          <h1>2.4k</h1>
-          <p>Degree Programs</p>
-        </div>
-        <div className="count-box">
-          <h1>3.5k</h1>
-          <p>List of Courses</p>
-        </div>
-        <div className="count-box">
-          <h1>250+</h1>
-          <p>Institutions & Colleges</p>
-        </div>
+        {HOME_COUNTS_DATA.map((item, index) => (
+          <div className="count-box" key={index}>
+            <h1>{item.count}</h1>
+            <p>{item.title}</p>
+          </div>
+        ))}
       </div>
 
       <div className="grid place-items-center min-h-[30vh] w-full bg-primary-500 p-5 md:px-[5rem] px-7">
