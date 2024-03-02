@@ -1,25 +1,85 @@
-import RegisterImg from "../../assets/images/register-form-img.jpg";
+import { BlueCircle, RegisterImg, YellowCircle } from "../../assets";
 import { Button, FormInput } from "../../components";
-import BlueCircle from "../../assets/images/blue-ellipse.png";
-import YellowCircle from "../../assets/images/yellow-ellipse.png";
+
+import React, { useState } from "react";
+
+interface ValuesType {
+  instituteName: string;
+  contactPerson: string;
+  email: string;
+  phoneNo: string;
+}
+
+const initialFormValues: ValuesType = {
+  instituteName: "",
+  contactPerson: "",
+  email: "",
+  phoneNo: "",
+};
 
 const RegisterForm = () => {
+  const [values, setValues] = useState<ValuesType>(initialFormValues);
+
+  const handleChange = (value: string, name: string) => {
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(values);
+    setValues(initialFormValues);
+  };
+
   return (
     <section
       id="register-form"
       className="w-full min-h-screen h-full md:px-[5rem] px-7 py-[5rem] grid place-items-center"
     >
       <div className="flex lg:flex-row flex-col-reverse w-full max-w-[1400px] h-full 2xl:max-h-[70vh] gap-[4rem] justify-center items-start relative">
-        <form className="flex flex-col justify-between 2xl:w-[30rem] xl:w-2/5 w-full gap-8 h-full z-10">
+        <form
+          className="flex flex-col justify-between 2xl:w-[30rem] xl:w-2/5 w-full gap-8 h-full z-10"
+          onSubmit={handleSubmit}
+        >
           <header className="flex flex-col justify-center items-center gap-1 text-center">
             <h1 className="text-4xl font-bold">Register Your Institute</h1>
             <p>Haven’t your Instititute is registered with us yet?</p>
           </header>
-          <FormInput label={"Institution Name"} />
-          <FormInput label={"Contact Person"} />
-          <FormInput label={"Contact Email"} />
-          <FormInput label={"Contact Phone Number"} />
-          <Button text="Send Request" width={"full"} />
+          <FormInput
+            type="text"
+            name="instituteName"
+            label="Institution Name"
+            placeholder="Ex: Esoft PVT LMT"
+            value={values.instituteName}
+            onChange={handleChange}
+          />
+          <FormInput
+            type="text"
+            name="contactPerson"
+            label="Contact Person"
+            placeholder="Your Name"
+            value={values.contactPerson}
+            onChange={handleChange}
+          />
+          <FormInput
+            type="email"
+            name="email"
+            label="Contact Email"
+            placeholder="Sample123@gamil.com"
+            value={values.email}
+            onChange={handleChange}
+          />
+          <FormInput
+            type="text"
+            name="phoneNo"
+            label="Contact Phone Number"
+            placeholder="+94 70 123 4567"
+            value={values.phoneNo}
+            onChange={handleChange}
+          />
+          <Button text="Send Request" width="full" />
         </form>
         <img
           src={RegisterImg}

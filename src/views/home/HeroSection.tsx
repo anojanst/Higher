@@ -1,17 +1,55 @@
 import { Button, Dropdown } from "../../components";
-import BlueCircle from "../../assets/images/blue-ellipse.png";
-import YellowCircle from "../../assets/images/yellow-ellipse.png";
-import Study1 from "../../assets/images/study-1.jpg";
-import Study2 from "../../assets/images/study-2.jpg";
-import Study3 from "../../assets/images/study-3.jpg";
-import Study4 from "../../assets/images/study-4.jpg";
-import Study5 from "../../assets/images/study-5.jpg";
+import React, { useState } from "react";
+import {
+  COURSE_TYPE_DATA,
+  DISCIPLINE_TYPE_DATA,
+  FORMAT_TYPE_DATA,
+} from "../../constants/generalConstants";
+import {
+  BlueCircle,
+  Study1,
+  Study2,
+  Study3,
+  Study4,
+  Study5,
+  YellowCircle,
+} from "../../assets";
 
-const HeroSection = () => {
+interface ValuesType {
+  courseType: string;
+  disciplineType: string;
+  formatType: string;
+}
+
+const initialFormValues: ValuesType = {
+  courseType: "",
+  disciplineType: "",
+  formatType: "",
+};
+
+const HeroSection: React.FC = () => {
+  const [values, setValues] = useState<ValuesType>(initialFormValues);
+
+  const handleDropdownChange = (selectedValue: string, name: string) => {
+    setValues({
+      ...values,
+      [name]: selectedValue,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(values);
+    setValues(initialFormValues);
+  };
+
   return (
-    <section className="grid place-items-center md:min-h-screen min-h-[80vh] w-full md:px-[5rem] px-7 py-[1rem] relative">
+    <section className="grid place-items-center h-screen w-full md:px-[5rem] px-7 py-8 relative -mt-20">
       <div className="flex items-center justify-start w-full max-w-[1400px] relative">
-        <form className="flex flex-col justify-start items-start relative gap-3 md:w-1/2 sm:w-2/3 w-full z-10">
+        <form
+          className="flex flex-col justify-start items-start relative gap-3 md:w-1/2 sm:w-2/3 w-full z-10"
+          onSubmit={handleSubmit}
+        >
           <h1 className="text-black xl:text-5xl md:text-4xl text-3xl font-bold">
             Find Your Dream Course
           </h1>
@@ -21,9 +59,27 @@ const HeroSection = () => {
             course your heart desire.
           </p>
           <div className="heroForm-grid">
-            <Dropdown />
-            <Dropdown />
-            <Dropdown />
+            <Dropdown
+              name="courseType"
+              defaultValue="Select Course Type"
+              options={COURSE_TYPE_DATA}
+              value={values.courseType}
+              onChange={handleDropdownChange}
+            />
+            <Dropdown
+              name="disciplineType"
+              defaultValue="Select Discipline Type"
+              options={DISCIPLINE_TYPE_DATA}
+              value={values.disciplineType}
+              onChange={handleDropdownChange}
+            />
+            <Dropdown
+              name="formatType"
+              defaultValue="Select Format Type"
+              options={FORMAT_TYPE_DATA}
+              value={values.formatType}
+              onChange={handleDropdownChange}
+            />
             <Button text={"Search"} />
           </div>
         </form>
