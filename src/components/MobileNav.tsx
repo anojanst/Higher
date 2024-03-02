@@ -3,7 +3,16 @@ import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 import { Button } from ".";
 import { MdClose } from "react-icons/md";
-import { MAIN_MENU_HOME } from "../constants/generalConstants";
+import {
+  MAIN_MENU_FIND_COURSE,
+  MAIN_MENU_HOME,
+  MAIN_MENU_INSTITUTES,
+} from "../constants/generalConstants";
+import {
+  FIND_COURSE_URL,
+  HOME_URL,
+  INSTITUTES_URL,
+} from "../constants/urlConstants";
 
 interface MobileNavProps {
   isMobileNavOpen: boolean;
@@ -31,22 +40,22 @@ const MobileNav: React.FC<MobileNavProps> = ({
         <MdClose />
       </span>
       <div className="flex flex-col gap-8 w-[90%] max-w-[500px]">
-        <Link to="/" className="mobile-link" onClick={handleMobileNav}>
+        <Link to={HOME_URL} className="mobile-link" onClick={handleMobileNav}>
           {MAIN_MENU_HOME}
         </Link>
         <Link
-          to="/find-courses"
+          to={FIND_COURSE_URL}
           className="mobile-link"
           onClick={handleMobileNav}
         >
-          Find Your Courses
+          {MAIN_MENU_FIND_COURSE}
         </Link>
         <Link
-          to="/institutes"
+          to={INSTITUTES_URL}
           className="mobile-link"
           onClick={handleMobileNav}
         >
-          Institutes
+          {MAIN_MENU_INSTITUTES}
         </Link>
         <LinkScroll
           to="register-form"
